@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import wb.controller.GameController;
+import wb.main.WarBallsConfig;
 
 public class Brick extends Item
 {
@@ -17,7 +18,7 @@ public class Brick extends Item
 		this.pid = pid;
 		this.tid = tid;
 		placeRate /= 2.00;// 1.75; ///divide per second Or *multiply for delay per second
-		health = 30000;
+		health = health = WarBallsConfig.brickHealth;
 		deathRate = 0;
 		armor = 1;
 		this.count = count;
@@ -54,11 +55,8 @@ public class Brick extends Item
 		g.setColor(Color.black);
 		g.drawRoundRect(x, y, sizeX, sizeY, 7, 7);
 //		g.setColor(mainColor);
-		g.drawLine(x+sizeX-1, y, x+1, y+sizeY);
-		g.drawLine(x+1, y, x+sizeX-1, y+sizeY);
 		
-		g.drawLine(x+sizeX/2, y+1, x+sizeX/2, y-1+sizeY);
-		g.drawLine(x+1, y+sizeY/2, x-1+sizeX, y+sizeY/2);
+		
 	}
 	
 	public String info()

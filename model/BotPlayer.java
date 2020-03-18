@@ -28,7 +28,7 @@ public class BotPlayer extends Unit
 		
 		weapons = new ArrayList<Weapon>();
 		items = new ArrayList<Item>();
-		int mainWeapon = 0;// (int)(Math.random()*4);
+		int mainWeapon = (int)(Math.random()*5);
 		//System.out.println(mainWeapon);
 		switch(mainWeapon)
 		{

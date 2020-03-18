@@ -54,7 +54,7 @@ public class MovementController
 		this.field = field;
 		units = field.getUnits();	
 		thisUnit = u;
-//		victim = controller.getPlayer();
+		victim = controller.getPlayer();
 		chooseRandomVictim();
 		
 		movementTime = 	 (Math.random()*1)+0.50; //Time to switch direction
@@ -144,7 +144,7 @@ public class MovementController
 		timeLastAttack += deltaTime;
 		timeLastHeal +=deltaTime;
 	
-	
+		
 		
 		if(thisUnit.getWeapon()!=null && thisUnit.getWeapon().getIsEmpty())
 			thisUnit.getWeapon().reload();
@@ -157,6 +157,9 @@ public class MovementController
 		
 		if(timeLastMove>=movementTime)
 		{
+			canAttack = true;
+			victim = thisUnit.getClosestEnemyUnit();
+			
 			chooseNewMovement(10);
 			if(Math.random()<WarBallsConfig.aggresion)
 			{	

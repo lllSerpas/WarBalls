@@ -1,4 +1,4 @@
-package wb.controller;
+   package wb.controller;
 
 import java.awt.event.*;
 import java.awt.Color;
@@ -56,6 +56,7 @@ public class GameController
 	protected float deadTimer = 0.0f;
 	protected int enemyTeamDeaths, friendlyTeamDeaths;
 	protected float waveTimer;
+	private Unit deadFriendly, deadEnemy;
 	
 	public GameController()
 	{
@@ -331,8 +332,16 @@ public class GameController
 			sizeX = unit.getBody().getSizeX();
 			maxWidth = BattleModel.width-sizeX;
 			maxHeight = BattleModel.height/2-sizeY;
+			
+			
 			fx = (int)(Math.random()*maxWidth);
 			fy = (int)(Math.random()*maxHeight);
+			
+			if(deadEnemy!=null) //Basically Spawns on where the last one died or Random
+			{
+				fx = deadEnemy.getX() + (int)(Math.random()*50);
+				fy = deadEnemy.getY() + (int)(Math.random()*50);;
+			}
 			
 			while(!canPlace(fx, fy, enemies, items))
 			{
@@ -714,12 +723,14 @@ public class GameController
 			{
 				if(u.getTid()==player.getTid())
 				{
+					deadFriendly = u;
 					friendlyTeamDeaths++;
 					if(u.getPid()!=player.getPid())
 						deadFriendlies++;
 				}
 				else
 				{
+					deadEnemy = u;
 					enemyTeamDeaths++;
 					deadEnemies++;
 				}

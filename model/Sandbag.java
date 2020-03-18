@@ -56,11 +56,14 @@ public class Sandbag extends Item
 		g.setColor(Color.black);
 		g.drawRoundRect(x, y, sizeX, sizeY, 7, 7);
 //		g.setColor(mainColor);
-		g.drawLine(x+sizeX-1, y, x+1, y+sizeY);
-		g.drawLine(x+1, y, x+sizeX-1, y+sizeY);
 		
-		g.drawLine(x+sizeX/2, y+1, x+sizeX/2, y-1+sizeY);
-		g.drawLine(x+1, y+sizeY/2, x-1+sizeX, y+sizeY/2);
+		int damage = this.getHealth();
+		for(int i=0; i<3; i++)
+		{
+			int xloc =(int) Math.random()*sizeX+1;
+			int yloc =(int) Math.random()*sizeY+1;
+			g.drawLine(x+xloc, y+yloc, x+1, y+sizeY);
+		}
 	}
 	
 	public String info()
