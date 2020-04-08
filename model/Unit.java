@@ -299,7 +299,7 @@ public abstract class Unit
 	public void drawHealthAndStatus(Graphics g)
 	{
 		//Current Ammo Arc
-		ammoArc = 90;
+		ammoArc = 90; //90 Degrees Represents North. The arc starts and ends at the top of the player.
 		
 		//Health Bar
 		g.setColor(Color.red);
@@ -309,7 +309,7 @@ public abstract class Unit
 		g.setColor(Color.black);
 		if(bleedRate>0)
 		{	
-			int angle = 20;
+			int angle = 10;
 			int bleedRateArc = 60;//45;//180;
 			for(int i=0; i<bleedRate; i++)
 			{
@@ -336,7 +336,7 @@ public abstract class Unit
 		{	
 			int bulletArcInterval = 0;
 			if(currentWeapon.maxClip!=0)
-				bulletArcInterval = 360/currentWeapon.maxClip;
+				bulletArcInterval = 360/currentWeapon.maxClip; // 360 Bullets max, each bullet is 1 degree of ammoarc
 			int arc = bulletArcInterval*currentWeapon.ammo;
 			ammoArc = arc;
 			g.setColor(Color.green);

@@ -25,7 +25,6 @@ public class MachineGun extends Weapon
 		
 		ammo = maxClip;
 		deltaTime = 0;
-//		damage = 33;
 	}
 	
 	public void useWeapon(int sx, int sy, int ex, int ey)

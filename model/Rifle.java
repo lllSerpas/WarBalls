@@ -25,8 +25,6 @@ public class Rifle extends Weapon
 		
 		ammo = maxClip;
 		deltaTime = 0;
-		
-//		damage = 50;
 	}
 	
 	public void useWeapon(int sx, int sy, int ex, int ey)
@@ -43,7 +41,7 @@ public class Rifle extends Weapon
 					bullet = new Bullet(sx, sy, points[0], points[1], damage, bleedDamage, WarBallsConfig.rifleGunTracerGhost, pid, tid, owner, WarBallsConfig.rifleGunTracerCount);
 				break;
 				case 1:
-					bullet = new LaserBullet(sx, sy, points[0], points[1], damage, bleedDamage, WarBallsConfig.rifleGunTracerGhost, pid, tid, owner, WarBallsConfig.rifleGunTracerCount);
+					bullet = new LaserBullet(sx, sy, points[0], points[1], damage, bleedDamage, WarBallsConfig.rifleGunTracerGhost, pid, tid, owner, WarBallsConfig.rifleBulletMaxPenetration, WarBallsConfig.rifleGunTracerCount);
 				break;
 			}
 			controller.addProjectile(bullet);

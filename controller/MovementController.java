@@ -58,7 +58,7 @@ public class MovementController
 		chooseRandomVictim();
 		
 		movementTime = 	 (Math.random()*1)+0.50; //Time to switch direction
-		moveDuration =	 (Math.random()*2)+0.75; //How long to continue in chosen direction
+		moveDuration =	 (Math.random()*2)+0.15; //How long to continue in chosen direction
 		attackTime = 	 (Math.random()*2)+0.10; //Time until Can Attack
 		attackDuration = (Math.random()*1)+0.30; //How long to continue attack
 		maxHealTime = 0;//(Math.random()*0.75);
@@ -119,6 +119,9 @@ public class MovementController
 				vic = (int)(Math.random()*enemies.size());
 			}
 			victim = enemies.get(vic);
+		}else {
+			
+			
 		}
 	}
 	
@@ -186,7 +189,7 @@ public class MovementController
 			int[] ep = {thisUnit.getX(), thisUnit.getY()};
 			if(victim!=null)
 				ep = Collider.getEndPoints(thisUnit.getX(), thisUnit.getY(), victim.getX(), victim.getY(), thisUnit.getSpeed(), 0);
-			thisUnit.setWeapon(1);
+			thisUnit.setWeapon(0);
 			to = true;
 			if(!controller.moveTo(thisUnit, ep[0], ep[1])) //Did not move (stuck)
 			{
@@ -201,7 +204,7 @@ public class MovementController
 			int[] ep = {thisUnit.getX(), thisUnit.getY()};
 			if(victim!=null)
 				ep = Collider.getEndPoints(thisUnit.getX(), thisUnit.getY(), victim.getX(), victim.getY(), thisUnit.getSpeed(), 0);
-			thisUnit.setWeapon(1);
+			thisUnit.setWeapon(3);
 			to = true;
 			if(!controller.moveTo(thisUnit, ep[0], ep[1])) //Did not move (stuck)
 			{
@@ -228,7 +231,9 @@ public class MovementController
 		}
 //		else
 //			canAttack = false;
-		
+		if(victim!=null) {
+			
+		}
 	
 		if(!to && !from)//Actually attack
 		{	
@@ -253,8 +258,8 @@ public class MovementController
 			chooseNewMovement(8);
 			if(thisUnit.getAllWeapons().size()>2)
 				thisUnit.setWeapon(2);
-			canAttack = true;
-			victim = thisUnit.getClosestEnemyUnit();
+			//canAttack = true;
+			//victim = thisUnit.getClosestEnemyUnit();
 			controller.updateUnit(thisUnit, thisUnit.getSpeed(), up, down, left, right, canAttack, victim.getCx(), victim.getCy());
 			
 //			thisUnit.setWeapon(0);
@@ -263,8 +268,8 @@ public class MovementController
 		//Stuck at Enemy
 		if(isStuck && thisUnit.isNearUnit() && thisUnit.getClosestUnit() == (thisUnit.getClosestEnemyUnit()))
 		{
-			chooseNewMovement(8);
-			thisUnit.setWeapon(0);
+			chooseNewMovement(10);
+			thisUnit.setWeapon(2);
 			canAttack = true;
 			victim = thisUnit.getClosestEnemyUnit();
 			controller.updateUnit(thisUnit, thisUnit.getSpeed(), up, down, left, right, canAttack, victim.getCx(), victim.getCy());

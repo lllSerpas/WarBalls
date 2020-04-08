@@ -28,32 +28,36 @@ public class BotPlayer extends Unit
 		
 		weapons = new ArrayList<Weapon>();
 		items = new ArrayList<Item>();
-		int mainWeapon = (int)(Math.random()*5);
+	
 		//System.out.println(mainWeapon);
-		switch(mainWeapon)
-		{
-			case 0: 
-				weapons.add(new MachineGun(x, y, pid, tid, controller, this));
-			break;
-			case 1:
-				weapons.add(new Rifle(x, y, pid, tid, controller, this));
-			break;
-			case 2:
-				weapons.add(new Shotgun(x, y, pid, tid, controller, this));
-			break;
-			case 3: 
-				weapons.add(new Sniper(x, y, pid, tid, controller, this));
-			break;
-			case 4:
-				weapons.add(new GrenadeLauncher(x, y, pid, tid, controller, this));
-			break;
-		}
-		weapons.add(new MachineGun(x, y, pid, tid, controller, this));
-		//weapons.add(new Shotgun(x, y, pid, tid, controller, this));
-		//weapons.add(new Sniper(x, y, pid, tid, controller, this));
-		//weapons.add(new GrenadeLauncher(x, y, pid, tid, controller, this));
-		//weapons.add(new Rifle(x, y, pid, tid, controller, this));
-		currentWeapon = weapons.get(0);
+		
+//		switch(WarBallsConfig.enemyMainWeapon)
+//		{
+//			case 0: 
+//				weapons.add(new MachineGun(x, y, pid, tid, controller, this));
+//			break;
+//			case 1:
+//				weapons.add(new Rifle(x, y, pid, tid, controller, this));
+//			break;
+//			case 2:
+//				weapons.add(new Shotgun(x, y, pid, tid, controller, this));
+//			break;
+//			case 3: 
+//				weapons.add(new Sniper(x, y, pid, tid, controller, this));
+//			break;
+//			case 4:
+//				weapons.add(new GrenadeLauncher(x, y, pid, tid, controller, this));
+//			break;
+//		}
+		
+		
+		weapons.add(new MachineGun(x, y, pid, tid, controller, this)); //0
+		weapons.add(new Sniper(x, y, pid, tid, controller, this)); // 1
+		weapons.add(new GrenadeLauncher(x, y, pid, tid, controller, this)); //2
+		weapons.add(new Shotgun(x, y, pid, tid, controller, this)); //3
+		weapons.add(new GrenadeLauncher(x, y, pid, tid, controller, this)); //4
+		weapons.add(new Rifle(x, y, pid, tid, controller, this)); //5
+		currentWeapon = weapons.get(WarBallsConfig.enemyMainWeapon);
 		items.add(new Sandbag(x, y, pid, tid, mainColor, controller, this, WarBallsConfig.sandBagsCarried));
 		currentItem = null;
 		

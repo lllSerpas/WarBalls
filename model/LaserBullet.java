@@ -77,11 +77,11 @@ public class LaserBullet extends Projectile
 	
 	public void drawBody(Graphics g)
 	{
-//		g.setColor(Color.red);
+		g.setColor(Color.red);
 //		if(this.tid != playerTid)
 		//	g.setColor(Color.cyan);
 
-		g.setColor(owner.mainColor);
+//		g.setColor(owner.mainColor);
 //		g.drawLine(sx, sy, ex, ey);
 	
 		computeTracer();

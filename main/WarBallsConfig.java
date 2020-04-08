@@ -3,15 +3,15 @@ package wb.main;
 public class WarBallsConfig
 {
 	//Window View Display Size
-	public static int width =  800;//1900;//1590;//500;//1450;//1200;//1300;//1900;//1580;//1590;//800;//1900;//1900;//900
+	public static int width =  3500;//1900;//1590;//500;//1450;//1200;//1300;//1900;//1580;//1590;//800;//1900;//1900;//900
 	public static int height = 800;//900;//800;//800;//975;//775;//800;////1000;//1000;//1000;//750
 	public static int tick = 3;
 	
-	public static int friendlyTeamCount = 13;
-	public static int enemyTeamCount = 13;
+	public static int friendlyTeamCount = 33;
+	public static int enemyTeamCount = 33;
 	public static int sandBagCount = 3;
-	public static int waveTimer = 1;
-	public static int speed = 2;
+	public static int waveTimer = 15;
+	public static int speed = 3;
 	public static int diagnolMovementType = 3;
 	
 	public static boolean friendlyUnitCollision = false;
@@ -26,7 +26,7 @@ public class WarBallsConfig
 	
 	//Walls and Environment Health
 	public static int sandBagsCarried = 3;
-	public static int sandBagHealth = 50;
+	public static int sandBagHealth = 100;
 	public static int brickHealth = 100;
 	public static int maxDeadTime = 3;
 	
@@ -50,6 +50,12 @@ public class WarBallsConfig
 	public static int friendlyHealth = 15;
 	public static int enemyHealth = 15;
 	
+	//Display Options
+	public static boolean displaySandBagBarriers = true;
+	public static boolean displayEnemyUnits = true;
+	public static boolean displayFriendlyUnits = true;
+	public static boolean displayPlayerUnits = true;
+		
 	//Team Identifiers
 	public static int FriendlyId = 777;
 	public static int FriendlyTeamId = 321;
@@ -58,12 +64,9 @@ public class WarBallsConfig
 	public static int WallId = 111;
 	public static int WallTeamId = 111;
 	
-	//Display Options
-	public static boolean displaySandBagBarriers = true;
-	public static boolean displayEnemyUnits = true;
-	public static boolean displayFriendlyUnits = true;
-	public static boolean displayPlayerUnits = true;
-		
+	//Team Weapons
+	public static int enemyMainWeapon = 0;//Machinegun, 
+	
 	//Machine Gun Stats
 	public static int machineGunDamage = 2;
 	public static int machineGunBleedDamage = 3;
@@ -71,7 +74,7 @@ public class WarBallsConfig
 	public static double machineGunOffSet = 6f;
 	public static float machineGunReloadTime = 3.5f;
 	public static int machineGunRange = 1500;
-	public static int machineGunMaxClip = 600;
+	public static int machineGunMaxClip = 360;
 	public static float machineGunTracerGhost = 0.046f;
 	public static int machineGunTracerCount = 5;
 	public static int machineGunBulletType = 1; // 0 = bullet / 1 = laser
@@ -87,6 +90,7 @@ public class WarBallsConfig
 	public static float rifleGunTracerGhost =  0.05f;
 	public static int rifleGunTracerCount = 5;
 	public static int rifleGunBulletType = 1; // 0 = bullet / 1 = laser
+	public static int rifleBulletMaxPenetration = 10;
 	
 	//Sniper Rifle Gun Stats
 	public static int sniperGunDamage = 10;
@@ -119,6 +123,8 @@ public class WarBallsConfig
 	public static int grenadeLauncherRange = 225;
 	public static double grenadeLauncherOffSet = 10;
 	public static double grenadeLauncherDamage = 10;
+	
+	
 	
 	//Grenade Item Stats
 	

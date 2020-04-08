@@ -29,6 +29,7 @@ public class Player extends Unit
 		weapons = new ArrayList<Weapon>();
 		items = new ArrayList<Item>();
 		
+		//weapons.add(new Rifle(x, y, pid, tid, controller, this)); //5
 		weapons.add(new MachineGun(x, y, pid, tid, controller, this));
 		//weapons.add(new Shotgun(x, y, pid, tid, controller, this));
 		//weapons.add(new Sniper(x, y, pid, tid, controller, this));
