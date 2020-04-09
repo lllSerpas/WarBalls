@@ -16,10 +16,9 @@ public class WarBalls extends Applet implements Runnable,  MouseListener, MouseM
 {
 	/**
 	 * Author: Luis Serpas
-	 * 201-772-8988
-	 * Lms4@njit.edu
-	 * web.njit.edu/~lms4
-	 * 5/19/2015
+	 * 201-719-0741
+	 * serpas.icode@gmail.com
+	 * 4/8/2020
 	 */
 	private static final long serialVersionUID = 31647466L;
 	
