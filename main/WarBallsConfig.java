@@ -74,7 +74,7 @@ public class WarBallsConfig
 	public static double machineGunOffSet = 6f;
 	public static float machineGunReloadTime = 3.5f;
 	public static int machineGunRange = 1500;
-	public static int machineGunMaxClip = 360;
+	public static int machineGunMaxClip = 360; //Max Circle Degrees
 	public static float machineGunTracerGhost = 0.046f;
 	public static int machineGunTracerCount = 5;
 	public static int machineGunBulletType = 1; // 0 = bullet / 1 = laser
